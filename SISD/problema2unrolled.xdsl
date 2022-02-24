@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- This network was created in GeNIe Academic, which can be used for educational and research purposes only -->
+<smile version="1.0" id="Network2" numsamples="10000" discsamples="10000">
+	<nodes>
+		<cpt id="posizione_reale_robot_0">
+			<state id="R1" />
+			<state id="R2" />
+			<state id="R3" />
+			<state id="R4" />
+			<probabilities>0.25 0.25 0.25 0.25</probabilities>
+		</cpt>
+		<cpt id="sensore_posizione_robot_0">
+			<state id="R1" />
+			<state id="R2" />
+			<state id="R3" />
+			<state id="R4" />
+			<parents>posizione_reale_robot_0</parents>
+			<probabilities>0.95 0.05 0 0 0.05 0.9 0.05 0 0 0.05 0.9 0.05 0 0 0.05 0.95</probabilities>
+		</cpt>
+		<cpt id="posizione_reale_target_0">
+			<state id="R1" />
+			<state id="R2" />
+			<state id="R3" />
+			<state id="R4" />
+			<probabilities>0.25 0.25 0.25 0.25</probabilities>
+		</cpt>
+		<cpt id="sensore_posizione_target_0">
+			<state id="R1" />
+			<state id="R2" />
+			<state id="R3" />
+			<state id="R4" />
+			<parents>posizione_reale_robot_0 posizione_reale_target_0</parents>
+			<probabilities>0.99 0.01 0 0 0.025 0.95 0.025 0 0 0.05 0.9 0.05 0 0.06 0.14 0.8 0.95 0.05 0 0 0.01 0.98 0.01 0 0 0.05 0.9 0.05 0 0.02000000000000002 0.13 0.85 0.85 0.13 0.02 0 0.05 0.9 0.05 0 0 0.01 0.98 0.01 0 0 0.05 0.95 0.8 0.14 0.06 0 0.05 0.9 0.05 0 0 0.025 0.95 0.025 0 0 0.01 0.99</probabilities>
+		</cpt>
+		<decision id="Spostamento_0">
+			<state id="L" />
+			<state id="S" />
+			<state id="R" />
+			<parents>sensore_posizione_robot_0 sensore_posizione_target_0</parents>
+		</decision>
+		<utility id="Utilita_0">
+			<parents>posizione_reale_robot_0 posizione_reale_target_0</parents>
+			<utilities>0 1 -1 -2 1 0 1 -1 -1 1 0 1 -2 -1 1 0</utilities>
+		</utility>
+		<cpt id="posizione_reale_robot_1">
+			<state id="R1" />
+			<state id="R2" />
+			<state id="R3" />
+			<state id="R4" />
+			<parents>posizione_reale_robot_0 Spostamento_0</parents>
+			<probabilities>0.975 0.025 0 0 0.975 0.025 0 0 0.05 0.95 0 0 0.95 0.025 0.025 0 0.025 0.95 0.025 0 0.025 0.025 0.95 0 0 0.95 0.025 0.025 0 0.025 0.95 0.025 0 0.025 0.025 0.95 0 0 0.95 0.05 0 0 0.025 0.975 0 0 0.025 0.975</probabilities>
+		</cpt>
+		<cpt id="sensore_posizione_robot_1">
+			<state id="R1" />
+			<state id="R2" />
+			<state id="R3" />
+			<state id="R4" />
+			<parents>posizione_reale_robot_1</parents>
+			<probabilities>0.95 0.05 0 0 0.05 0.9 0.05 0 0 0.05 0.9 0.05 0 0 0.05 0.95</probabilities>
+		</cpt>
+		<cpt id="posizione_reale_target_1">
+			<state id="R1" />
+			<state id="R2" />
+			<state id="R3" />
+			<state id="R4" />
+			<parents>posizione_reale_target_0</parents>
+			<probabilities>0.5 0.5 0 0 0.3333333333333333 0.3333333333333333 0.3333333333333333 0 0 0.3333333333333333 0.3333333333333333 0.3333333333333333 0 0 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="sensore_posizione_target_1">
+			<state id="R1" />
+			<state id="R2" />
+			<state id="R3" />
+			<state id="R4" />
+			<parents>posizione_reale_robot_1 posizione_reale_target_1</parents>
+			<probabilities>0.99 0.01 0 0 0.025 0.95 0.025 0 0 0.05 0.9 0.05 0 0.06 0.14 0.8 0.95 0.05 0 0 0.01 0.98 0.01 0 0 0.05 0.9 0.05 0 0.02000000000000002 0.13 0.85 0.85 0.13 0.02 0 0.05 0.9 0.05 0 0 0.01 0.98 0.01 0 0 0.05 0.95 0.8 0.14 0.06 0 0.05 0.9 0.05 0 0 0.025 0.95 0.025 0 0 0.01 0.99</probabilities>
+		</cpt>
+		<decision id="Spostamento_1">
+			<state id="L" />
+			<state id="S" />
+			<state id="R" />
+			<parents>sensore_posizione_robot_1 sensore_posizione_target_1 Spostamento_0</parents>
+		</decision>
+		<cpt id="posizione_reale_robot_2">
+			<state id="R1" />
+			<state id="R2" />
+			<state id="R3" />
+			<state id="R4" />
+			<parents>posizione_reale_robot_1 Spostamento_1</parents>
+			<probabilities>0.975 0.025 0 0 0.975 0.025 0 0 0.05 0.95 0 0 0.95 0.025 0.025 0 0.025 0.95 0.025 0 0.025 0.025 0.95 0 0 0.95 0.025 0.025 0 0.025 0.95 0.025 0 0.025 0.025 0.95 0 0 0.95 0.05 0 0 0.025 0.975 0 0 0.025 0.975</probabilities>
+		</cpt>
+		<cpt id="sensore_posizione_robot_2">
+			<state id="R1" />
+			<state id="R2" />
+			<state id="R3" />
+			<state id="R4" />
+			<parents>posizione_reale_robot_2</parents>
+			<probabilities>0.95 0.05 0 0 0.05 0.9 0.05 0 0 0.05 0.9 0.05 0 0 0.05 0.95</probabilities>
+		</cpt>
+		<cpt id="posizione_reale_target_2">
+			<state id="R1" />
+			<state id="R2" />
+			<state id="R3" />
+			<state id="R4" />
+			<parents>posizione_reale_target_1</parents>
+			<probabilities>0.5 0.5 0 0 0.3333333333333333 0.3333333333333333 0.3333333333333333 0 0 0.3333333333333333 0.3333333333333333 0.3333333333333333 0 0 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="sensore_posizione_target_2">
+			<state id="R1" />
+			<state id="R2" />
+			<state id="R3" />
+			<state id="R4" />
+			<parents>posizione_reale_robot_2 posizione_reale_target_2</parents>
+			<probabilities>0.99 0.01 0 0 0.025 0.95 0.025 0 0 0.05 0.9 0.05 0 0.06 0.14 0.8 0.95 0.05 0 0 0.01 0.98 0.01 0 0 0.05 0.9 0.05 0 0.02000000000000002 0.13 0.85 0.85 0.13 0.02 0 0.05 0.9 0.05 0 0 0.01 0.98 0.01 0 0 0.05 0.95 0.8 0.14 0.06 0 0.05 0.9 0.05 0 0 0.025 0.95 0.025 0 0 0.01 0.99</probabilities>
+		</cpt>
+		<decision id="Spostamento_2">
+			<state id="L" />
+			<state id="S" />
+			<state id="R" />
+			<parents>sensore_posizione_robot_2 sensore_posizione_target_2 Spostamento_1</parents>
+		</decision>
+		<cpt id="posizione_reale_robot_3">
+			<state id="R1" />
+			<state id="R2" />
+			<state id="R3" />
+			<state id="R4" />
+			<parents>posizione_reale_robot_2 Spostamento_2</parents>
+			<probabilities>0.975 0.025 0 0 0.975 0.025 0 0 0.05 0.95 0 0 0.95 0.025 0.025 0 0.025 0.95 0.025 0 0.025 0.025 0.95 0 0 0.95 0.025 0.025 0 0.025 0.95 0.025 0 0.025 0.025 0.95 0 0 0.95 0.05 0 0 0.025 0.975 0 0 0.025 0.975</probabilities>
+		</cpt>
+		<cpt id="posizione_reale_target_3">
+			<state id="R1" />
+			<state id="R2" />
+			<state id="R3" />
+			<state id="R4" />
+			<parents>posizione_reale_target_2</parents>
+			<probabilities>0.5 0.5 0 0 0.3333333333333333 0.3333333333333333 0.3333333333333333 0 0 0.3333333333333333 0.3333333333333333 0.3333333333333333 0 0 0.5 0.5</probabilities>
+		</cpt>
+		<utility id="Utilita_3">
+			<parents>posizione_reale_robot_3 posizione_reale_target_3</parents>
+			<utilities>0 1 -1 -2 1 0 1 -1 -1 1 0 1 -2 -1 1 0</utilities>
+		</utility>
+		<utility id="Utilita_2">
+			<parents>posizione_reale_robot_2 posizione_reale_target_2</parents>
+			<utilities>0 1 -1 -2 1 0 1 -1 -1 1 0 1 -2 -1 1 0</utilities>
+		</utility>
+		<utility id="Utilita_1">
+			<parents>posizione_reale_robot_1 posizione_reale_target_1</parents>
+			<utilities>0 1 -1 -2 1 0 1 -1 -1 1 0 1 -2 -1 1 0</utilities>
+		</utility>
+		<cpt id="sensore_posizione_robot_3">
+			<state id="R1" />
+			<state id="R2" />
+			<state id="R3" />
+			<state id="R4" />
+			<parents>posizione_reale_robot_3</parents>
+			<probabilities>0.95 0.05 0 0 0.05 0.9 0.05 0 0 0.05 0.9 0.05 0 0 0.05 0.95</probabilities>
+		</cpt>
+		<cpt id="sensore_posizione_target_3">
+			<state id="R1" />
+			<state id="R2" />
+			<state id="R3" />
+			<state id="R4" />
+			<parents>posizione_reale_robot_3 posizione_reale_target_3</parents>
+			<probabilities>0.99 0.01 0 0 0.025 0.95 0.025 0 0 0.05 0.9 0.05 0 0.06 0.14 0.8 0.95 0.05 0 0 0.01 0.98 0.01 0 0 0.05 0.9 0.05 0 0.02000000000000002 0.13 0.85 0.85 0.13 0.02 0 0.05 0.9 0.05 0 0 0.01 0.98 0.01 0 0 0.05 0.95 0.8 0.14 0.06 0 0.05 0.9 0.05 0 0 0.025 0.95 0.025 0 0 0.01 0.99</probabilities>
+		</cpt>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 2.1.621.1 ACADEMIC" name="Network2 unrolled" faultnameformat="user">
+			<node id="posizione_reale_robot_0">
+				<name>posizione reale robot</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>517 148 603 201</position>
+			</node>
+			<node id="sensore_posizione_robot_0">
+				<name>sensore posizione robot</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>313 146 392 216</position>
+			</node>
+			<node id="posizione_reale_target_0">
+				<name>posizione reale target</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>528 296 608 346</position>
+			</node>
+			<node id="sensore_posizione_target_0">
+				<name>sensore posizione target</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>317 302 393 360</position>
+			</node>
+			<node id="Spostamento_0">
+				<name>Spostamento</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>408 65 488 97</position>
+			</node>
+			<node id="Utilita_0">
+				<name>Utilita</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>436 408 484 445</position>
+			</node>
+			<textbox>
+				<caption>Step0</caption>
+				<font color="696969" name="Arial" size="7" />
+				<position>329 470 347 500</position>
+			</textbox>
+			<textbox>
+				<caption>Step1</caption>
+				<font color="696969" name="Arial" size="7" />
+				<position>729 470 747 500</position>
+			</textbox>
+			<textbox>
+				<caption>Step2</caption>
+				<font color="696969" name="Arial" size="7" />
+				<position>1129 470 1147 500</position>
+			</textbox>
+			<textbox>
+				<caption>Step3</caption>
+				<font color="696969" name="Arial" size="7" />
+				<position>1529 470 1547 500</position>
+			</textbox>
+			<node id="posizione_reale_robot_1">
+				<name>posizione reale robot (t=1)</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>917 168 1003 221</position>
+			</node>
+			<node id="sensore_posizione_robot_1">
+				<name>sensore posizione robot (t=1)</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>713 166 792 236</position>
+			</node>
+			<node id="posizione_reale_target_1">
+				<name>posizione reale target (t=1)</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>928 316 1008 366</position>
+			</node>
+			<node id="sensore_posizione_target_1">
+				<name>sensore posizione target (t=1)</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>717 322 793 380</position>
+			</node>
+			<node id="Spostamento_1">
+				<name>Spostamento (t=1)</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>808 85 888 117</position>
+			</node>
+			<node id="Utilita_1">
+				<name>Utilita (t=1)</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>836 428 884 465</position>
+			</node>
+			<node id="posizione_reale_robot_2">
+				<name>posizione reale robot (t=2)</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1317 148 1403 201</position>
+			</node>
+			<node id="sensore_posizione_robot_2">
+				<name>sensore posizione robot (t=2)</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1113 146 1192 216</position>
+			</node>
+			<node id="posizione_reale_target_2">
+				<name>posizione reale target (t=2)</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1328 296 1408 346</position>
+			</node>
+			<node id="sensore_posizione_target_2">
+				<name>sensore posizione target (t=2)</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1117 302 1193 360</position>
+			</node>
+			<node id="Spostamento_2">
+				<name>Spostamento (t=2)</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1208 65 1288 97</position>
+			</node>
+			<node id="Utilita_2">
+				<name>Utilita (t=2)</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1236 408 1284 445</position>
+			</node>
+			<node id="posizione_reale_robot_3">
+				<name>posizione reale robot (t=3)</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1717 168 1803 221</position>
+			</node>
+			<node id="sensore_posizione_robot_3">
+				<name>sensore posizione robot (t=3)</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1513 166 1592 236</position>
+			</node>
+			<node id="posizione_reale_target_3">
+				<name>posizione reale target (t=3)</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1728 316 1808 366</position>
+			</node>
+			<node id="sensore_posizione_target_3">
+				<name>sensore posizione target (t=3)</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1517 322 1593 380</position>
+			</node>
+			<node id="Utilita_3">
+				<name>Utilita (t=3)</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1636 428 1684 465</position>
+			</node>
+		</genie>
+	</extensions>
+</smile>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- This network was created in GeNIe Academic, which can be used for educational and research purposes only -->
+<smile version="1.0" id="Network1" numsamples="1000" discsamples="10000">
+	<nodes>
+		<decision id="CT_Scan">
+			<state id="Si" />
+			<state id="No" />
+		</decision>
+		<cpt id="Metastasi_Mediastinali">
+			<state id="Presenti" />
+			<state id="Assenti" />
+			<probabilities>0.46 0.54</probabilities>
+		</cpt>
+		<cpt id="Res_CT_Scan">
+			<state id="Test_Positivo" />
+			<state id="Test_Negativo" />
+			<state id="Non_Definito" />
+			<parents>CT_Scan Metastasi_Mediastinali</parents>
+			<probabilities>0.8200000000000001 0.18 0 0.19 0.8100000000000001 0 0 0 1 0 0 1</probabilities>
+		</cpt>
+		<decision id="M_Test">
+			<state id="Si" />
+			<state id="No" />
+			<parents>CT_Scan</parents>
+		</decision>
+		<cpt id="Res_M_Test">
+			<state id="Test_Positivo" />
+			<state id="Test_Negativo" />
+			<state id="Non_Definito" />
+			<parents>Metastasi_Mediastinali M_Test</parents>
+			<probabilities>0.8200000000000001 0.18 0 0 0 1 0.005 0.995 0 0 0 1</probabilities>
+		</cpt>
+		<decision id="Trattamento">
+			<state id="Tracheotomia" />
+			<state id="Radiazioni" />
+			<parents>Res_M_Test Res_CT_Scan</parents>
+		</decision>
+		<cpt id="Rischio_Morte">
+			<state id="Morte" />
+			<state id="In_vita" />
+			<parents>Trattamento</parents>
+			<probabilities>0.037 0.963 0.02 0.98</probabilities>
+		</cpt>
+		<cpt id="Rischio_Morte_MTest">
+			<state id="Morte" />
+			<state id="In_vita" />
+			<parents>M_Test</parents>
+			<probabilities>0.005 0.995 0 1</probabilities>
+		</cpt>
+		<deterministic id="Morte">
+			<state id="morte" />
+			<state id="in_vita" />
+			<parents>Rischio_Morte Rischio_Morte_MTest</parents>
+			<resultingstates>morte morte morte in_vita</resultingstates>
+		</deterministic>
+		<utility id="Aspettativa_di_vita">
+			<parents>Morte Trattamento Metastasi_Mediastinali</parents>
+			<utilities>0 0 0 0 1.8 4.45 1.8 2.64</utilities>
+		</utility>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 2.1.621.1 ACADEMIC" name="Network1" faultnameformat="nodestate">
+			<node id="CT_Scan">
+				<name>CT Scan</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="7" />
+				<position>42 280 143 338</position>
+			</node>
+			<node id="Metastasi_Mediastinali">
+				<name>Metastasi Mediastinali</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="7" />
+				<position>468 247 575 317</position>
+			</node>
+			<node id="Res_CT_Scan">
+				<name>Res CT Scan</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="7" />
+				<position>263 272 372 342</position>
+			</node>
+			<node id="M_Test">
+				<name>M Test</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="7" />
+				<position>265 517 367 572</position>
+			</node>
+			<node id="Res_M_Test">
+				<name>Res M Test</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="7" />
+				<position>483 517 577 569</position>
+			</node>
+			<node id="Trattamento">
+				<name>Trattamento</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="7" />
+				<position>683 518 790 569</position>
+			</node>
+			<node id="Rischio_Morte">
+				<name>Rischio Morte dopo Trattamento</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="7" />
+				<position>852 417 958 479</position>
+			</node>
+			<node id="Rischio_Morte_MTest">
+				<name>Rischio Morte M Test</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="7" />
+				<position>570 396 667 456</position>
+			</node>
+			<node id="Aspettativa_di_vita">
+				<name>Aspettativa di vita</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="7" />
+				<position>682 260 784 309</position>
+			</node>
+			<node id="Morte">
+				<name>Morte</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="7" />
+				<position>793 334 886 389</position>
+			</node>
+		</genie>
+	</extensions>
+</smile>

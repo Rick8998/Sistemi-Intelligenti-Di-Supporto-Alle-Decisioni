@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- This network was created in GeNIe Academic, which can be used for educational and research purposes only -->
+<smile version="1.0" id="Network2" numsamples="10000" discsamples="10000">
+	<nodes>
+		<cpt id="posizione_reale_robot" dynamic="plate">
+			<state id="R1" />
+			<state id="R2" />
+			<state id="R3" />
+			<state id="R4" />
+			<probabilities>0.25 0.25 0.25 0.25</probabilities>
+		</cpt>
+		<cpt id="sensore_posizione_robot" dynamic="plate">
+			<state id="R1" />
+			<state id="R2" />
+			<state id="R3" />
+			<state id="R4" />
+			<parents>posizione_reale_robot</parents>
+			<probabilities>0.95 0.05 0 0 0.05 0.9 0.05 0 0 0.05 0.9 0.05 0 0 0.05 0.95</probabilities>
+		</cpt>
+		<cpt id="posizione_reale_target" dynamic="plate">
+			<state id="R1" />
+			<state id="R2" />
+			<state id="R3" />
+			<state id="R4" />
+			<probabilities>0.25 0.25 0.25 0.25</probabilities>
+		</cpt>
+		<cpt id="sensore_posizione_target" dynamic="plate">
+			<state id="R1" />
+			<state id="R2" />
+			<state id="R3" />
+			<state id="R4" />
+			<parents>posizione_reale_robot posizione_reale_target</parents>
+			<probabilities>0.99 0.01 0 0 0.025 0.95 0.025 0 0 0.05 0.9 0.05 0 0.06 0.14 0.8 0.95 0.05 0 0 0.01 0.98 0.01 0 0 0.05 0.9 0.05 0 0.02000000000000002 0.13 0.85 0.85 0.13 0.02 0 0.05 0.9 0.05 0 0 0.01 0.98 0.01 0 0 0.05 0.95 0.8 0.14 0.06 0 0.05 0.9 0.05 0 0 0.025 0.95 0.025 0 0 0.01 0.99</probabilities>
+		</cpt>
+		<decision id="Spostamento" dynamic="plate">
+			<state id="L" />
+			<state id="S" />
+			<state id="R" />
+			<parents>sensore_posizione_robot sensore_posizione_target</parents>
+		</decision>
+		<utility id="Utilita" dynamic="plate">
+			<parents>posizione_reale_robot posizione_reale_target</parents>
+			<utilities>0 1 -1 -2 1 0 1 -1 -1 1 0 1 -2 -1 1 0</utilities>
+		</utility>
+	</nodes>
+	<dynamic numslices="4">
+		<cpt id="posizione_reale_robot" order="1">
+			<parents>posizione_reale_robot Spostamento</parents>
+			<probabilities>0.975 0.025 0 0 0.975 0.025 0 0 0.05 0.95 0 0 0.95 0.025 0.025 0 0.025 0.95 0.025 0 0.025 0.025 0.95 0 0 0.95 0.025 0.025 0 0.025 0.95 0.025 0 0.025 0.025 0.95 0 0 0.95 0.05 0 0 0.025 0.975 0 0 0.025 0.975</probabilities>
+		</cpt>
+		<cpt id="posizione_reale_target" order="1">
+			<parents>posizione_reale_target</parents>
+			<probabilities>0.9 0.1 0 0 0.05 0.9 0.05 0 0 0.05 0.9 0.05 0 0 0.1 0.9</probabilities>
+		</cpt>
+	</dynamic>
+	<extensions>
+		<genie version="1.0" app="GeNIe 2.1.621.1 ACADEMIC" name="Network2" faultnameformat="user">
+			<plate leftwidth="100" rightwidth="100">139 27 739 493</plate>
+			<node id="Spostamento">
+				<name>Spostamento</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>408 65 488 97</position>
+			</node>
+			<node id="posizione_reale_robot">
+				<name>posizione reale robot</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>517 148 603 201</position>
+			</node>
+			<node id="sensore_posizione_robot">
+				<name>sensore posizione robot</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>313 146 392 216</position>
+			</node>
+			<node id="posizione_reale_target">
+				<name>posizione reale target</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>528 296 608 346</position>
+			</node>
+			<node id="sensore_posizione_target">
+				<name>sensore posizione target</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>317 302 393 360</position>
+			</node>
+			<node id="Utilita">
+				<name>Utilita</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>436 408 484 445</position>
+			</node>
+		</genie>
+	</extensions>
+</smile>
