@@ -94,8 +94,6 @@ public class Main {
 	}
 	
 	private static License licenseInit() {
-		return new smile.License(
-		     	"HERE GOES YOUR LICENSE"
-		     );
+		   "here goes your personal jsmile license"
 	}
 }
