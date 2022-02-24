@@ -70,7 +70,7 @@ public class Main {
 					
 					robotAgent.targetPositionSensor(i);
 					
-					//all'ultimo passo non devo più fare lo spostamento
+					//all'ultimo passo non devo piÃ¹ fare lo spostamento
 					if(i < robotAgent.TIME_SLICE-1) {
 						robotAgent.spostamento(i);
 					}
@@ -95,22 +95,7 @@ public class Main {
 	
 	private static License licenseInit() {
 		return new smile.License(
-		     	"SMILE LICENSE f4c4f6f3 abe0d681 5aecec1f " +
-		     	"THIS IS AN ACADEMIC LICENSE AND CAN BE USED " +
-		     	"SOLELY FOR ACADEMIC RESEARCH AND TEACHING, " +
-		     	"AS DEFINED IN THE BAYESFUSION ACADEMIC " +
-		     	"SOFTWARE LICENSING AGREEMENT. " +
-		     	"Serial #: 8g0106hdbism9i2sxapeo99w0 " +
-		     	"Issued for: RICCARDO CECCI (20023915@studenti.uniupo.it) " +
-		     	"Academic institution: Universit\u00e0 del piemonte orientale " +
-		     	"Valid until: 2022-08-02 " +
-		     	"Issued by BayesFusion activation server",
-		     	new byte[] {
-		     	-63,87,-103,67,-12,-64,-78,111,-122,-108,-24,-62,-99,-71,-102,-96,
-		     	27,-52,-114,-54,103,-83,-43,73,26,61,106,99,115,-14,56,-104,
-		     	-33,-71,70,108,70,102,-57,46,-29,127,-123,36,-47,-92,0,-81,
-		     	105,81,93,-70,-33,0,91,-51,112,37,-114,102,-37,-79,-115,67
-		     	}
+		     	"HERE GOES YOUR LICENSE"
 		     );
 	}
 }
